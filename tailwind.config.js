@@ -5,6 +5,7 @@ export default {
       extend: {
          backgroundImage: {
             "main-bg": "url('/main-bg.png')",
+            "mramar-bg": "url('/mramar-bg.png')",
          },
       },
    },

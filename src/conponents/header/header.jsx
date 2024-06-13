@@ -1,13 +1,13 @@
-import "./header";
+// import "./header";
 
 export default function AppHeader(props) {
    let className =
       "header flex justify-between max-w-[360px] text-xs items-baseline";
-   if (props.direction === "center") {
-      className += " mt-0 mb-0 mr-auto ml-auto";
-   } else {
-      className += " text-center";
-   }
+
+   props.direction === "center"
+      ? (className += " mt-0 mb-0 mr-auto ml-auto")
+      : (className += " text-center");
+
    return (
       <header className={className}>
          <a href="#">
