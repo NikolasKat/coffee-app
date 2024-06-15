@@ -6,6 +6,7 @@ export default {
          backgroundImage: {
             "main-bg": "url('/main-bg.png')",
             "mramar-bg": "url('/mramar-bg.png')",
+            "small-bg": "url('/bg-small.png')",
          },
       },
    },
