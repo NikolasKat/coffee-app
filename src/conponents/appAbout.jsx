@@ -16,8 +16,8 @@ export default function AppAbout(props) {
       );
    } else {
       return (
-         <section className="text-center flex justify-center align-middle flex-wrap mt-7">
-            <div className="info w-[600rem] mt-9">
+         <section className="text-center mt-7 mb-0 mr-auto ml-auto max-w-[500px] ">
+            <div className="info">
                <h2 className="text-[24px]">{props.title}</h2>
                <div className="flex justify-center mt-3 mb-10">
                   <img src="/black-logo.png" alt="logo" />

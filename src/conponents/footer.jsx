@@ -1,4 +1,4 @@
-import AppHeader from "../navigation/navigation";
+import AppHeader from "./navigation";
 
 export default function AppFooter() {
    return (

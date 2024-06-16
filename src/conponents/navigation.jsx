@@ -1,8 +1,7 @@
-// import "./header";
+import { Link } from "react-router-dom";
 
 export default function AppHeader(props) {
-   let className =
-      "header flex justify-between max-w-[360px] text-xs items-baseline";
+   let className = "flex justify-between items-center max-w-[360px] text-xs";
 
    props.direction === "center"
       ? (className += " mt-0 mb-0 mr-auto ml-auto")
@@ -10,12 +9,12 @@ export default function AppHeader(props) {
 
    return (
       <header className={className}>
-         <a href="#">
+         <Link to="/home">
             <img src={props.logo} alt="logo" />
-         </a>
+         </Link>
 
-         <a href="#">Our coffee</a>
-         <a href="#">For your pleasure</a>
+         <Link to="/page1">Our coffee</Link>
+         <Link to="/page2">For your pleasure</Link>
       </header>
    );
 }

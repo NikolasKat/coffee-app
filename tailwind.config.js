@@ -7,6 +7,7 @@ export default {
             "main-bg": "url('/main-bg.png')",
             "mramar-bg": "url('/mramar-bg.png')",
             "small-bg": "url('/bg-small.png')",
+            "small-bg2": "url('/bg-small1.png')",
          },
       },
    },
