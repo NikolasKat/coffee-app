@@ -1,7 +1,7 @@
 function AppFilter() {
    return (
-      <nav className="flex justify-between items-center w-[700px] h-14 mt-0 mb-0 mr-auto ml-auto">
-         <div className="search flex justify-between items-center min-w[600px]">
+      <nav className="flex flex-wrap justify-between items-center max-w-[700px] h-14 mt-0 mb-12 mr-auto ml-auto">
+         <div className="search flex justify-between items-center min-w[600px] mt-4">
             <h4>Lookiing for</h4>
             <input
                className="w-[180px] min-h-[30px] drop-shadow-md p-2 ml-4"
@@ -9,7 +9,7 @@ function AppFilter() {
                placeholder="start typing here..."
             />
          </div>
-         <div className="filter flex justify-between items-center">
+         <div className="filter flex justify-between items-center mt-4">
             <h4>Or filter</h4>
             <nav>
                <button
