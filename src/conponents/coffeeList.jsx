@@ -10,7 +10,7 @@ export default function AppList({ data, countOfItems }) {
    });
 
    return (
-      <ul className="flex flex-wrap justify-between max-w-[700px] mr-auto ml-auto">
+      <ul className="flex flex-wrap justify-between max-w-[800px] mr-auto ml-auto">
          {elements}
       </ul>
    );

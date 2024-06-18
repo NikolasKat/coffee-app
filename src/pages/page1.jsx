@@ -11,52 +11,89 @@ function PageOne() {
          name: "Solimo Coffee Beans",
          weight: "2 kg",
          price: 10.73,
+         country: "Brazil",
          src: "/list1.png",
       },
       {
          name: "Presto Coffee Beans",
          weight: "1 kg",
          price: 15.6,
+         country: "Kenya",
          src: "/list2.png",
       },
       {
          name: "AROMISTICO Coffee",
          weight: "2 kg",
          price: 20.5,
+         country: "Columbia",
          src: "/list3.png",
       },
       {
          name: "AROMISTISSOLATTE Coffee",
          weight: "1 kg",
          price: 12.76,
+         country: "Columbia",
          src: "/list4.png",
       },
       {
-         name: "Solimo Coffee Beans",
+         name: "Solyare Coffee Beans",
          weight: "2 kg",
          price: 10.73,
+         country: "Kenya",
          src: "/list1.png",
       },
       {
-         name: "Presto Coffee Beans",
+         name: "Prossecco Coffee Beans",
          weight: "1 kg",
          price: 15.6,
+         country: "Brazil",
          src: "/list2.png",
       },
       {
-         name: "AROMISTICO Coffee",
+         name: "AREMUARRE Coffee",
          weight: "2 kg",
          price: 20.5,
+         country: "Brazil",
          src: "/list3.png",
       },
       {
-         name: "AROMISTISSOLATTE Coffee",
+         name: "PISTOLYARE Coffee",
          weight: "1 kg",
          price: 12.76,
+         country: "Kenya",
          src: "/list4.png",
       },
    ]);
+   const [temp, setTemp] = useState("");
+   const [filt, setFilt] = useState("");
 
+   const onFilter = (items, filt) => {
+      if (filt.length === 0) {
+         console.log("Base arr");
+         return items;
+      } else {
+         console.log("New arr");
+         return items.filter((item) => item.country === filt);
+      }
+   };
+
+   const onUpdateFilter = (filt) => {
+      setFilt(filt);
+   };
+
+   const onSearch = (items, temp) => {
+      if (temp.length === 0) {
+         return items;
+      } else {
+         return items.filter((item) => item.name.indexOf(temp) > -1);
+      }
+   };
+
+   const onUpdateSearch = (temp) => {
+      setTemp(temp);
+   };
+
+   const newData = onFilter(onSearch(cards, temp), filt);
    return (
       <>
          <section className="items-center mr-auto ml-auto text-white text-center w-full bg-cover bg-no-repeat p-8 bg-[url('/bg-small.png')] min-h-[260px]">
@@ -68,11 +105,14 @@ function PageOne() {
             src="/about1.png"
          />
          <hr className="relative border-[1px] border-black w-[240px] h-[1px] mt-8 mb-0 mr-auto ml-auto" />
-         <section className="min-w-[600px] p-9">
-            <AppFilter />
-            <AppList data={cards} countOfItems={6} />
+         <section className="max-w-[800px] p-9">
+            <AppFilter
+               onUpdateSearch={onUpdateSearch}
+               onUpdateFilter={onUpdateFilter}
+            />
+            <AppList data={newData} countOfItems={6} />
          </section>
-         <AppFooter />{" "}
+         <AppFooter />
       </>
    );
 }
